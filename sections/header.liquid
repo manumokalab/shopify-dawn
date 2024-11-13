@@ -106,7 +106,9 @@
   endfor
 -%}
 
-<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.sticky_header_type != 'none' %}sticky-header data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %}div{% endif %} class="header-wrapper color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}"
+  data-primary-color-scheme="color-{{ section.settings.color_scheme }}" data-secondary-color-scheme="color-{{ section.settings.secondary_color_scheme }}"
+>
   {%- liquid
     assign social_links = false
     assign localization_forms = false
@@ -293,6 +295,7 @@
     }
 
     connectedCallback() {
+      this.headerWrapper = document.querySelector('.header-wrapper');
       this.header = document.querySelector('.section-header');
       this.headerIsAlwaysSticky = this.getAttribute('data-sticky-type') === 'always' || this.getAttribute('data-sticky-type') === 'reduce-logo-size';
       this.headerBounds = {};
@@ -343,10 +346,16 @@
 
       if (scrollTop > this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
+        this.headerWrapper.classList.remove(this.headerWrapper.dataset.primaryColorScheme);
+        this.headerWrapper.classList.add(this.headerWrapper.dataset.secondaryColorScheme);
+
         if (this.preventHide) return;
         requestAnimationFrame(this.hide.bind(this));
       } else if (scrollTop < this.currentScrollTop && scrollTop > this.headerBounds.bottom) {
         this.header.classList.add('scrolled-past-header');
+        this.headerWrapper.classList.remove(this.headerWrapper.dataset.primaryColorScheme);
+        this.headerWrapper.classList.add(this.headerWrapper.dataset.secondaryColorScheme);
+
         if (!this.preventReveal) {
           requestAnimationFrame(this.reveal.bind(this));
         } else {
@@ -360,6 +369,8 @@
         }
       } else if (scrollTop <= this.headerBounds.top) {
         this.header.classList.remove('scrolled-past-header');
+        this.headerWrapper.classList.add(this.headerWrapper.dataset.primaryColorScheme);
+        this.headerWrapper.classList.remove(this.headerWrapper.dataset.secondaryColorScheme);
         requestAnimationFrame(this.reset.bind(this));
       }
 
@@ -535,6 +546,12 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "color_scheme",
+      "id": "secondary_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-5"
     },
     {
       "type": "color_scheme",
