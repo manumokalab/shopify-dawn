@@ -1482,9 +1482,15 @@
             "label": "Bold"
           }
         ],
-        "default": "default",
-        "label": "Icons set..."
-      }
+        "default": "bold",
+        "label": "Icons set"
+      },
+      {
+        "type": "color",
+        "id": "icons_color",
+        "label": "Icons color",
+        "default": "#000000"
+      },
     ]
   }
 ]
