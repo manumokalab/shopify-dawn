@@ -1484,6 +1484,10 @@
           {
             "value": "thin",
             "label": "Thin"
+          },
+          {
+            "value": "heroicons-circle",
+            "label": "Heroicons Circle"
           }
         ],
         "default": "default",
