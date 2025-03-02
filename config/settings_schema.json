@@ -1465,5 +1465,26 @@
         "default": "scheme-1"
       }
     ]
+  },
+  {
+    "name": "Icons set",
+    "settings": [
+      {
+        "type": "select",
+        "id": "icons_set",
+        "options": [
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ],
+        "default": "default",
+        "label": "Icons set..."
+      }
+    ]
   }
 ]
