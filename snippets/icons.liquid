@@ -1,0 +1,56 @@
+{%- liquid
+  assign iconset = settings.icons_set
+-%}
+
+{%- if icon == 'search' -%}
+  {%- if iconset == 'default' -%}
+    {{- 'icon-search.svg' | inline_asset_content -}}
+  {%- elsif iconset == 'bold' -%}
+    <span class="svg-wrapper">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+        <path d="M11 6C13.7614 6 16 8.23858 16 11M16.6588 16.6549L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if icon == 'account' -%}
+  {%- if iconset == 'default' -%}
+    {{- 'icon-account.svg' | inline_asset_content -}}
+  {%- elsif iconset == 'bold' -%}
+    <span class="svg-wrapper">
+      <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+        <path d="M8 7C9.65685 7 11 5.65685 11 4C11 2.34315 9.65685 1 8 1C6.34315 1 5 2.34315 5 4C5 5.65685 6.34315 7 8 7Z" fill="currentColor"/>
+        <path d="M14 12C14 10.3431 12.6569 9 11 9H5C3.34315 9 2 10.3431 2 12V15H14V12Z" fill="currentColor"/>
+      </svg>
+    </span>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if icon == 'cart' -%}
+  {%- if iconset == 'default' -%}
+    {{- 'icon-cart.svg' | inline_asset_content -}}
+  {%- elsif iconset == 'bold' -%}
+    <svg viewBox="0 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+          <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -726.000000)" fill="#000000">
+              <path d="M475.97,734 L473.475,726 L467,726 C466.447,726 466,726.448 466,727 C466,727.553 466.447,728 467,728 L472,728 L474.011,734 L474,734 L476,746 C476,748.209 477.791,750 480,750 L491,750 C493.209,750 495,748.209 495,746 L498,734 L475.97,734 L475.97,734 Z M490,752 C488.896,752 488,752.896 488,754 C488,755.104 488.896,756 490,756 C491.104,756 492,755.104 492,754 C492,752.896 491.104,752 490,752 L490,752 Z M480,752 C478.896,752 478,752.896 478,754 C478,755.104 478.896,756 480,756 C481.104,756 482,755.104 482,754 C482,752.896 481.104,752 480,752 L480,752 Z" id="cart" sketch:type="MSShapeGroup"></path>
+          </g>
+      </g>
+    </svg>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if icon == 'cart-empty' -%}
+  {%- if iconset == 'default' -%}
+    {{- 'icon-cart-empty.svg' | inline_asset_content -}}
+  {%- elsif iconset == 'bold' -%}
+    <svg viewBox="0 -1 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width: 24px; height: 24px;">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+          <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-466.000000, -726.000000)" fill="#000000">
+              <path d="M475.97,734 L473.475,726 L467,726 C466.447,726 466,726.448 466,727 C466,727.553 466.447,728 467,728 L472,728 L474.011,734 L474,734 L476,746 C476,748.209 477.791,750 480,750 L491,750 C493.209,750 495,748.209 495,746 L498,734 L475.97,734 L475.97,734 Z M490,752 C488.896,752 488,752.896 488,754 C488,755.104 488.896,756 490,756 C491.104,756 492,755.104 492,754 C492,752.896 491.104,752 490,752 L490,752 Z M480,752 C478.896,752 478,752.896 478,754 C478,755.104 478.896,756 480,756 C481.104,756 482,755.104 482,754 C482,752.896 481.104,752 480,752 L480,752 Z" id="cart" sketch:type="MSShapeGroup"></path>
+          </g>
+      </g>
+    </svg>
+  {%- endif -%}
+{%- endif -%}
