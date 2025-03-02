@@ -1480,9 +1480,13 @@
           {
             "value": "bold",
             "label": "Bold"
+          },
+          {
+            "value": "thin",
+            "label": "Thin"
           }
         ],
-        "default": "bold",
+        "default": "thin",
         "label": "Icons set"
       },
       {
