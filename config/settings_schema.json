@@ -1486,7 +1486,7 @@
             "label": "Thin"
           }
         ],
-        "default": "thin",
+        "default": "default",
         "label": "Icons set"
       },
       {
