@@ -140,6 +140,11 @@
         "type": "shopify://apps/magic-360/blocks/magic360/7a270f2a-4fa4-43bc-94fa-20b5338c66b9",
         "disabled": false,
         "settings": {}
+      },
+      "13669220540847626739": {
+        "type": "shopify://apps/my-likes-development/blocks/app-embed/00955cac-0801-43a3-812f-170085fe9df7",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
